@@ -83,8 +83,8 @@ body {
     min-height: 50px;
     border: none;
     border-radius: 5px;
-    /*white-space: pre-wrap;
-    overflow-wrap: break-word;*/
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 
 .taskmanager__add_textarea:focus {
