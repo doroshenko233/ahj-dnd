@@ -82,6 +82,9 @@ export default class Taskmanager {
       const columnIndex = [...this.columns].findIndex(
         (column) => column === currentColumn,
       );
+      if (!this.tasks[columnIndex]) {
+        this.tasks.push([]);
+      }
       this.tasks[columnIndex].push(textarea.value);
       this.render();
       event.target.replaceWith(this.add[columnIndex]);
@@ -257,8 +260,9 @@ export default class Taskmanager {
       this.dragClean();
       return;
     }
-
-    this.targetPlace.replaceWith(this.targetElement);
+    if (this.targetPlace) {
+      this.targetPlace.replaceWith(this.targetElement);
+    }
     this.dragClean();
     this.tasksCollect();
   }
